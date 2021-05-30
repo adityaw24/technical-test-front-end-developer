@@ -1,0 +1,89 @@
+html {
+	background-color: #F2F2F2;
+}
+.nav-container {
+  align-items: flex-start;
+  display: flex;
+  height: 100px;
+  width: auto;
+  justify-content: space-around;
+  background-color: #C4C4C4;
+  text-align: center;
+}
+.nav-container h2 {
+	list-style-type: none;
+	text-align: center;
+	display: inline-block;
+	margin: auto;
+}
+.nav-container h2 a {
+	text-decoration: none;
+	color: white;
+}
+.nav-container h2 a span {
+	color: black;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    width: auto;
+    align-content: center;
+    flex-direction: row;
+    margin: 50px;
+}
+.form-countainer {
+	background-color: #C4C4C4;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-height: 719px;
+  mix-blend-mode: normal;
+  padding: 14.6px 43.7px;
+  width: 609px;
+}
+form {
+	width: 500px;
+	height: auto;
+}
+form input {
+	width: 500px;
+	height: 40px;
+}
+.form-row1 {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.form-row1 .title {
+	display: inline-block;
+}
+.form-row1 .location {
+	display: inline-block;
+}
+.form-row1 .participant {
+
+}
+.form-row1 .date {
+
+}
+.form-row1 .note {
+	width: 500px;
+	height: 300px;
+}
+.image-container {
+	display: inline-block;
+	margin: auto;
+	width: 50%;
+}
+.image-container img {
+    object-fit: cover;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}

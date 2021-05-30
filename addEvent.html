@@ -1,0 +1,64 @@
+<!DOCTYPE <html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="addEvent.css">
+		<title>Add Event</title>
+	</head>
+	<body>
+		<header>
+			<div class="nav-container">
+				<h2><a class="navbar-brand" href="home.html">Navbar Brand</a></h2>
+				<h2><a href="addEvent.html"><span>+Add Event</span></a></h2>
+				<h2><a href="dashboard.html">Dashboard</a></h2>
+			</div>
+		</header>
+		<main>
+			<div class="form-countainer">
+				<h1>+Add Event</h1>
+				<div class="form-row1">
+					<form id="formAddEvent" action="add-event-json.php">
+						<input type="text" id="title" class="title" name="title" placeholder="Title" autocomplete="on" formmethod="post" required><br>
+						<input type="text" id="location" class="location" name="location" placeholder="Location" autocomplete="on" formmethod="post" required><br>
+						<input type="text" id="participant" class="participant" name="participant" placeholder="Participant" autocomplete="on" formmethod="post" required><br>
+						<input type="date" id="date" class="date" name="date" placeholder="Date" autocomplete="on" formmethod="post" required><br>
+						<textarea class="note" id="note" name="note" placeholder="note" cols="30" rows="10" minlength="50"></textarea>
+						<button type="button" onclick="alert('Gambar berhasil diupload')">Upload Picture</button><br>
+						<button type="submit" onclick="alert('Form berhasil diupload')">Submit</button>		
+					</form>			
+				</div>
+			</div>
+			<div class="image-container">
+				<img src="./images/Rectangle 3 (1).svg" alt="">
+			</div>
+		</main>
+		<script>
+			document.querySelector('#formAddEvent').addEventListener('click',function(e)
+			{
+				addEvent();		
+			});
+			
+			function addEvent()
+			{
+				let event = {
+					'title' : document.querySelector('#title').value,
+					'location' : document.querySelector('#location').value,
+					'participant' : document.querySelector('#participant').value,
+					'date' : document.querySelector('#date').value,
+					'note' : document.querySelector('#note').value,
+				};
+
+				fetch('add-event-json.php',{
+							method : 'POST',
+							headers : {
+								'Content-type' : 'application/json'
+							},
+							body : JSON.stringify(event)			
+						}
+					)
+					.then(response => response.text())
+					.then(text => console.log(text))
+					.catch(error => console.log(error));
+			};
+		</script>		
+	</body>
+</html>
